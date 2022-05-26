@@ -51,7 +51,7 @@ export const QuestionForm: React.FC = () => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper onSubmit={(e) => e.preventDefault()}>
       <div>
         <TextInput
           type="text"
@@ -72,6 +72,7 @@ export const QuestionForm: React.FC = () => {
       </div>
 
       <button
+        type="submit"
         disabled={!question || spell.length < CONSTANTS.SPELL_TEXT.length}
         onClick={() => setShowAnswer(true)}
       >
@@ -83,7 +84,7 @@ export const QuestionForm: React.FC = () => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.form`
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
