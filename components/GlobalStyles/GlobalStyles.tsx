@@ -1,6 +1,7 @@
+import { COLORS } from "@/theme/constants";
 import { createGlobalStyle } from "styled-components";
 
-export default createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   *,
   *::before,
   *::after {
@@ -11,8 +12,20 @@ export default createGlobalStyle`
     margin: 0;
   }
 
+  html {
+    --color-white: hsl(${COLORS.white});
+    --color-primary: hsl(${COLORS.primary});
+    --color-secondary: hsl(${COLORS.secondary});
+    --color-gray-100: hsl(${COLORS.gray[100]});
+    --color-gray-300: hsl(${COLORS.gray[300]});
+    --color-gray-500: hsl(${COLORS.gray[500]});
+    --color-gray-700: hsl(${COLORS.gray[700]});
+    --color-gray-900: hsl(${COLORS.gray[900]});
+  }
+
   html,
-  body {
+  body,
+  #root {
     height: 100%;
   }
 

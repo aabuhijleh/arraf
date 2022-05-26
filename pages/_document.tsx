@@ -33,7 +33,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="ar" dir="rtl">
         <Head>
-          <title>عراف</title>
           <link rel="shortcut icon" href="/images/favicon.png" />
         </Head>
         <body>
