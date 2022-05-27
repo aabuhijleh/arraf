@@ -22,6 +22,7 @@ export const GlobalStyles = createGlobalStyle`
     --color-gray-500: hsl(${COLORS.gray[500]});
     --color-gray-700: hsl(${COLORS.gray[700]});
     --color-gray-900: hsl(${COLORS.gray[900]});
+    --color-off-black: hsl(${COLORS.offBlack});
 
     --fz-xxs: ${SIZES.xxs};
     --fz-xs: ${SIZES.xs};
@@ -30,6 +31,8 @@ export const GlobalStyles = createGlobalStyle`
     --fz-lg: ${SIZES.lg};
     --fz-xl: ${SIZES.xl};
     --fz-xxl: ${SIZES.xxl};
+    --fz-xxxl: ${SIZES.xxxl};
+    --fz-xxxxl: ${SIZES.xxxxl};
   }
 
   html,

@@ -2,20 +2,47 @@ import type { NextPage } from "next";
 import { QuestionForm } from "@/components/QuestionForm";
 import { Eye, Triangle } from "react-feather";
 import styled from "styled-components";
+import { useState } from "react";
+import { Answer } from "@/components/Answer";
 
 const Home: NextPage = () => {
+  const [answer, setAnswer] = useState("");
+  const [showAnswer, setShowAnswer] = useState(false);
+
+  const goBackToQuestion = () => {
+    setAnswer("");
+    setShowAnswer(false);
+  };
+
   return (
-    <>
-      <QuestionForm />
+    <MaxWidthWrapper>
+      {!showAnswer && (
+        <QuestionForm
+          answer={answer}
+          setAnswer={setAnswer}
+          setShowAnswer={setShowAnswer}
+        />
+      )}
+
+      {showAnswer && <Answer answer={answer} goBack={goBackToQuestion} />}
+
       <HiddenSymbolWrapper>
         <Triangle size={100} />
         <IconWrapper>
           <Eye size={35} />
         </IconWrapper>
       </HiddenSymbolWrapper>
-    </>
+    </MaxWidthWrapper>
   );
 };
+
+const MaxWidthWrapper = styled.div`
+  height: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 32px;
+`;
 
 const HiddenSymbolWrapper = styled.div`
   position: fixed;

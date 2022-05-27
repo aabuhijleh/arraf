@@ -6,12 +6,20 @@ import { getLastChar } from "./QuestionForm.helpers";
 import { VisuallyHidden } from "../VisuallyHidden";
 import { Eye } from "react-feather";
 
-export const QuestionForm: React.FC = () => {
+export interface QuestionFormProps {
+  answer: string;
+  setAnswer: (answer: string) => void;
+  setShowAnswer: (showAnswer: boolean) => void;
+}
+
+export const QuestionForm: React.FC<QuestionFormProps> = ({
+  answer,
+  setAnswer,
+  setShowAnswer,
+}) => {
   const [question, setQuestion] = useState("");
   const [spell, setSpell] = useState("");
-  const [answer, setAnswer] = useState("");
   const [autoFillMode, setAutoFillMode] = useState(false);
-  const [, setShowAnswer] = useState(false);
 
   const handleSpellChange: ChangeEventHandler<HTMLTextAreaElement> = (
     event
@@ -92,10 +100,6 @@ export const QuestionForm: React.FC = () => {
 
 const Wrapper = styled.form`
   height: 100%;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 32px;
   display: grid;
   grid-template-columns: 1fr;
   place-content: center;
@@ -172,9 +176,8 @@ const SubmitButton = styled.button`
   }
 
   ${SubmitButtonWrapper}:hover > &, &:focus {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     transition: opacity 500ms, transform 200ms;
-    filter: drop-shadow(4px 8px 8px hsl(0deg 0% 10% / 0.8));
   }
 
   ${SubmitButtonWrapper}:active > & {

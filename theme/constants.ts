@@ -10,6 +10,7 @@ export const COLORS = {
     700: "220deg 5% 40%",
     900: "220deg 3% 20%",
   },
+  offBlack: "0deg 0% 10%",
 };
 
 export const SIZES = {
