@@ -49,7 +49,6 @@ const fadeIn = keyframes`
 
 const AnswerContainer = styled.div`
   position: relative;
-  /* max-width: 600px; */
   padding: 16px 32px;
   border-radius: 16px;
   height: 300px;
