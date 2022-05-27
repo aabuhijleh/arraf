@@ -8,7 +8,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>عراف</title>
+        <title>عرّاف</title>
       </Head>
       <GlobalStyles />
       <ThemeProvider theme={theme}>

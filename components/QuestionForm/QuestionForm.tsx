@@ -54,15 +54,18 @@ export const QuestionForm: React.FC = () => {
 
   return (
     <Wrapper onSubmit={(e) => e.preventDefault()}>
-      <TextInput
-        type="text"
-        onChange={(e) => setQuestion(e.target.value)}
-        value={question}
-        placeholder={"ما هو إسمي؟"}
-      />
+      <QuestionWrapper>
+        <HelpText>إسأل عرّاف</HelpText>
+        <TextInput
+          type="text"
+          onChange={(e) => setQuestion(e.target.value)}
+          value={question}
+          placeholder={"ما هو إسمي؟"}
+        />
+      </QuestionWrapper>
 
       <SpellWrapper>
-        <HelpText>كرّر هذه التعويذة حرفيا ليجيبك عراف</HelpText>
+        <HelpText>كرّر هذه التعويذة حرفيا ليجيبك عرّاف</HelpText>
         <SpellText>{CONSTANTS.SPELL_TEXT}</SpellText>
         <TextArea
           onChange={handleSpellChange}
@@ -97,11 +100,16 @@ const Wrapper = styled.form`
   grid-template-columns: 1fr;
   place-content: center;
   gap: 32px;
+  isolation: isolate;
 `;
 
-const SpellWrapper = styled.div``;
+const QuestionWrapper = styled.label``;
 
-const HelpText = styled.p``;
+const SpellWrapper = styled.label``;
+
+const HelpText = styled.p`
+  padding: 8px;
+`;
 
 const SpellText = styled.div`
   padding: 8px;
