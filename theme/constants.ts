@@ -1,5 +1,8 @@
 export const COLORS = {
+  primary: "339deg 100% 54%",
+  secondary: "219deg 84% 53%",
   white: "0deg 0% 100%",
+  black: "0,0%,0%",
   gray: {
     100: "185deg 5% 95%",
     300: "190deg 5% 80%",
@@ -7,8 +10,18 @@ export const COLORS = {
     700: "220deg 5% 40%",
     900: "220deg 3% 20%",
   },
-  primary: "340deg 65% 47%",
-  secondary: "240deg 60% 63%",
+};
+
+export const SIZES = {
+  xxs: `${12 / 16}rem`,
+  xs: `${13 / 16}rem`,
+  sm: `${14 / 16}rem`,
+  md: `${16 / 16}rem`,
+  lg: `${18 / 16}rem`,
+  xl: `${20 / 16}rem`,
+  xxl: `${24 / 16}rem`,
+  xxxl: `${32 / 16}rem`,
+  xxxxl: `${48 / 16}rem`,
 };
 
 export const WEIGHTS = {

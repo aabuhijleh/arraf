@@ -34,6 +34,10 @@ export default class MyDocument extends Document {
       <Html lang="ar" dir="rtl">
         <Head>
           <link rel="shortcut icon" href="/images/favicon.png" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
         <body>
           <Main />
