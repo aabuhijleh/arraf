@@ -5,6 +5,7 @@ import * as CONSTANTS from "./QuestionForm.constants";
 import { getLastChar } from "./QuestionForm.helpers";
 import { VisuallyHidden } from "../VisuallyHidden";
 import { Eye } from "react-feather";
+import useSound from "use-sound";
 
 export interface QuestionFormProps {
   answer: string;
@@ -20,6 +21,8 @@ export const QuestionForm: React.FC<QuestionFormProps> = ({
   const [question, setQuestion] = useState("");
   const [spell, setSpell] = useState("");
   const [autoFillMode, setAutoFillMode] = useState(false);
+
+  const [playDemon] = useSound("/sounds/demon.mp3");
 
   const handleSpellChange: ChangeEventHandler<HTMLTextAreaElement> = (
     event
@@ -86,7 +89,10 @@ export const QuestionForm: React.FC<QuestionFormProps> = ({
         <SubmitButton
           type="submit"
           disabled={!question || spell.length < CONSTANTS.SPELL_TEXT.length}
-          onClick={() => setShowAnswer(true)}
+          onClick={() => {
+            playDemon();
+            setShowAnswer(true);
+          }}
         >
           <VisuallyHidden>أجبني</VisuallyHidden>
           <IconWrapper>

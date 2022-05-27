@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { ArrowRightCircle } from "react-feather";
+import useSound from "use-sound";
 
 interface AnswerProps {
   answer: string;
@@ -8,10 +9,17 @@ interface AnswerProps {
 }
 
 export const Answer: React.FC<AnswerProps> = ({ answer, goBack }) => {
+  const [playImpact] = useSound("/sounds/impact.mp3");
+
   return (
     <AnswerWrapper>
       <AnswerContainer>
-        <BackButtonWrapper onClick={goBack}>
+        <BackButtonWrapper
+          onClick={() => {
+            playImpact();
+            goBack();
+          }}
+        >
           <ArrowRightCircle size={48} />
         </BackButtonWrapper>
         <AnswerText>{answer}</AnswerText>
