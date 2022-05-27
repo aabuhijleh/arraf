@@ -107,7 +107,7 @@ export const QuestionForm: React.FC<QuestionFormProps> = ({
 const Wrapper = styled.form`
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(200px, 1fr);
   place-content: center;
   gap: 32px;
   isolation: isolate;

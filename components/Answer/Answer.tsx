@@ -31,7 +31,7 @@ export const Answer: React.FC<AnswerProps> = ({ answer, goBack }) => {
 const AnswerWrapper = styled.div`
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(200px, 1fr);
   place-content: center;
   gap: 32px;
   isolation: isolate;
@@ -49,6 +49,7 @@ const fadeIn = keyframes`
 
 const AnswerContainer = styled.div`
   position: relative;
+  /* max-width: 600px; */
   padding: 16px 32px;
   border-radius: 16px;
   height: 300px;
